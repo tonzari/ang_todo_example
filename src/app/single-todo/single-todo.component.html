@@ -1,0 +1,5 @@
+<div #el (click)="completeTodo(todo)" class="todo-item" [ngClass]="[todo.colorClass, 'raised']">
+    
+    <h2 [ngClass]="{'strike-through': todo.isComplete}">{{todo.description}}</h2>
+
+</div>

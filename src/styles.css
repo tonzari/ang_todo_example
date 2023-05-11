@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { margin: 0; padding: 0; }
+
+/* COLORS! Predefined colors to choose from and apply to the sticky notes */
+.sticky-note-yellow { background-color: rgb(242, 242, 158); }
+.sticky-note-pink   { background-color: rgb(255, 192, 203); }
+.sticky-note-green  { background-color: rgb(175, 238, 155); }
+.sticky-note-blue   { background-color: rgb(173, 216, 230); }
+.sticky-note-orange { background-color: rgb(255, 178, 102); }
+.sticky-note-purple { background-color: rgb(216, 191, 216); }
+
+header {
+    background-color: #EFEFEF;
+    color: #222222;
+    padding: 1em;
+    width: 100%;
+}
+
+header h1 {
+    color: rgb(49, 49, 49);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+#form-container {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#todo-form {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content:center;
+}
+
+#todo-input {
+    width: 70%;
+    height: 2rem;
+}
+
+#todo-submit {
+    background-color: rgb(162, 162, 162);
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    margin: 0 0 0 10px;
+    width: 20%;
+}
+
+#todo-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    margin: 0 auto;
+    width: 90%;
+}
+
+.todo-item {
+    position: relative;
+    top: 0px;
+    color:rgb(27, 26, 70);
+    cursor: pointer;
+    font-family: 'Annie Use Your Telescope', 'Comic Sans', cursive;
+    height: 180px;
+    width: 180px;
+    margin: 30px;
+    padding: 1em;
+
+    /* effects */
+    filter: drop-shadow(.2rem .2rem .05rem rgba(7, 7, 7, 0.4));
+    transition: all 0.25s ease-in-out;
+}
+
+.todo-item h2 {
+    margin-top: 0;
+}
+
+.rotated {
+    transform: rotate(3deg);
+}
+
+.raised, .todo-item:hover {
+    position: relative;
+    top: -10px;
+    filter: drop-shadow(.4rem .4rem .2rem rgba(7, 7, 7, 0.2));
+
+    transition: all 0.1s ease-out;
+}
+
+.strike-through {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+}
+
