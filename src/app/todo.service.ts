@@ -84,7 +84,7 @@ export class TodoService {
     // }
   ];
   
-  // see the CSS file.
+  // see the CSS file. these are names of css styles. we randomly choose one and apply that style to newly created todo items.
   stickyNoteColors = [
     'sticky-note-yellow',
     'sticky-note-pink', 

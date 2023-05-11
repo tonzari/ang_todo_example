@@ -15,16 +15,16 @@ export class SingleTodoComponent implements AfterViewInit {
   
   ngAfterViewInit(): void {
     
-    const randomDegree = this.todoService.getRandomInt(-5,5);
+    const randomDegree = this.todoService.getRandomInt(-5,6);
+    
     //  change rotation with random num
-    this.renderer.setStyle(this.element.nativeElement, 'transform', `rotate(${randomDegree}deg)` );
+    this.renderer.setStyle(this.element.nativeElement.querySelector('.todo-item'), 'transform', `rotate(${randomDegree}deg)` );
     
     // after 500ms remove raised class    
     setTimeout(() => {
 
       // Get reference to dom element
       const todoDiv = this.element.nativeElement.querySelector('.todo-item');
-
       // use renderer to remove class from element
       this.renderer.removeClass(todoDiv, 'raised');
 
@@ -32,6 +32,22 @@ export class SingleTodoComponent implements AfterViewInit {
   }
 
   completeTodo(todo: Todo):void {
-    this.todoService.completeTodo(todo);
+
+    if (todo.isComplete) {
+
+      const ren = this.renderer;
+      const el = this.element.nativeElement.querySelector('.todo-item');
+
+      ren.setStyle(el, 'transform', `scale(0.01) rotate(180deg)` );
+
+      setTimeout(() => {
+        this.todoService.completeTodo(todo);
+      }, 1300);
+    } else {
+      this.todoService.completeTodo(todo);
+    }
+
+
+
   }
 }
